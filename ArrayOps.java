@@ -63,13 +63,25 @@ public class ArrayOps {
     public static boolean isSorted(int [] array) {
         int length = array.length;
         int prev = array[0];
+        boolean isIncreasing = true;
+        boolean isDecreasing = true;
         for (int i = 1; i < length; i++) {
             if (prev > array[i]) {
-                return false;
+                isIncreasing = false;
+                break;
             } else {
                 prev = array[i];
             }
         }
-        return true;
+        prev = array[0];
+        for (int i = 1; i < length; i++) {
+            if (prev < array[i]) {
+                isDecreasing = false;
+                break;
+            } else {
+                prev = array[i];
+            }
+        }
+        return (isIncreasing || isDecreasing);
     }
 }
