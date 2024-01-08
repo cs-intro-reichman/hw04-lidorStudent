@@ -107,9 +107,9 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        firstWordLowercase(string);
-        firstLetterUppercase(string);
-        removeSpace(string);
+        string = firstWordLowercase(string);
+        string = firstLetterUppercase(string);
+        string = removeSpace(string);
         return string;
     }
 
