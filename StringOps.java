@@ -27,16 +27,22 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) {
         int length = string.length();
+        char letter = 0;
         String answer = "";
         for (int i = 0; i < length; i++) {
-            if (string.charAt(i) == 'a' || string.charAt(i) == 'e' || 
-                string.charAt(i) == 'i' || string.charAt(i) == 'o' || 
-                string.charAt(i) == 'u') {
-                    answer += string.charAt(i) - ('a' - 'A');
+            letter = string.charAt(i);
+            if (letter == 'a' || letter == 'e' || letter == 'i' || 
+                letter == 'o' || letter == 'u') {
+                    answer += (letter - ('a' - 'A'));
+            } else 
+            if (letter == 'A' || letter == 'E' || letter == 'I' || 
+                letter == 'O' || letter == 'U') {
+                    answer += letter;
+            } else 
+            if (letter >= 'A' && letter <= 'Z') {
+                    answer += (letter + ('a' - 'A'));
             } else {
-                if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z') {
-                    answer += string.charAt(i) + ('a' - 'A');
-                }
+                    answer += letter;
             }
         }
         return answer;
