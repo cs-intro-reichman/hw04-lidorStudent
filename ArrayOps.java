@@ -11,7 +11,7 @@ public class ArrayOps {
         }
         for (int i = 0; i < length + 1; i++) {
             if (count[i] == 0) {
-                return count[i];
+                return i;
             }
         }
         return -1;
