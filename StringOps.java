@@ -55,6 +55,10 @@ public class StringOps {
         int index = 0;
         char letter = string.charAt(index);
         String answer = "";
+        while (letter == ' ') {
+            index++;
+            letter = string.charAt(index);
+        }
         while (letter != ' ') {
             letter = string.charAt(index);
             if (letter >= 'A' && letter <= 'Z') {
