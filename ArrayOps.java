@@ -22,7 +22,7 @@ public class ArrayOps {
         int max = array[0];
         int secondMax = array[0];
         for (int i = 1; i < length; i++) {
-            if (array[i] > max) {
+            if (array[i] >= max) {
                 secondMax = max;
                 max = array[i];
             }
