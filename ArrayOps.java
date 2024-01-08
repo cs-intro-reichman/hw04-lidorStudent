@@ -4,7 +4,16 @@ public class ArrayOps {
     }
     
     public static int findMissingInt (int [] array) {
-        // Write your code here:
+        int length = array.length;
+        int[] count = new int[length + 1];
+        for (int i = 0; i < length; i++) {
+            count[array[i]]++; 
+        }
+        for (int i = 0; i < length + 1; i++) {
+            if (count[i] == 0) {
+                return count[i];
+            }
+        }
         return -1;
     }
 
