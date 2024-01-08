@@ -33,16 +33,16 @@ public class StringOps {
             letter = string.charAt(i);
             if (letter == 'a' || letter == 'e' || letter == 'i' || 
                 letter == 'o' || letter == 'u') {
-                    answer += (letter - ('a' - 'A'));
+                    answer += (char)(letter - ('a' - 'A'));
             } else 
             if (letter == 'A' || letter == 'E' || letter == 'I' || 
                 letter == 'O' || letter == 'U') {
-                    answer += letter;
+                    answer += (char)letter;
             } else 
             if (letter >= 'A' && letter <= 'Z') {
-                    answer += (letter + ('a' - 'A'));
+                    answer += (char)(letter + ('a' - 'A'));
             } else {
-                    answer += letter;
+                    answer += (char)letter;
             }
         }
         return answer;
