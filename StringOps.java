@@ -107,11 +107,10 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        String answer = "";
-        answer = firstWordLowercase(string);
-        answer = firstLetterUppercase(string);
-        answer = removeSpace(string);
-        return answer;
+        firstWordLowercase(string);
+        firstLetterUppercase(string);
+        removeSpace(string);
+        return string;
     }
 
     public static int[] allIndexOf (String string, char chr) {
