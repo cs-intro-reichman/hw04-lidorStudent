@@ -56,6 +56,10 @@ public class ArrayOps {
             if (!found) {
                 return false;
             }
+            /* 
+        this is an aggressive copy of code, you should have created a helper function,
+            we have functions so we do not need to copy-paste code
+            */
         }
         return true;
     }
