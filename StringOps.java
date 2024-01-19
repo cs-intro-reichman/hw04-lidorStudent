@@ -31,6 +31,10 @@ public class StringOps {
         String answer = "";
         for (int i = 0; i < length; i++) {
             letter = string.charAt(i);
+        /* 
+  		why didn't you create a helper isVowel()?
+		could be a lot cleaner
+  		*/
             if (letter == 'a' || letter == 'e' || letter == 'i' || 
                 letter == 'o' || letter == 'u') {
                     answer += (char)(letter - ('a' - 'A'));
@@ -39,6 +43,10 @@ public class StringOps {
                 letter == 'O' || letter == 'U') {
                     answer += letter;
             } else 
+              /* 
+	  		why didn't you create a helper isLetter()?
+			could be a lot more readable.
+	  		*/  
             if (letter >= 'A' && letter <= 'Z') {
                     answer += (char)(letter + ('a' - 'A'));
             } else {
@@ -114,6 +122,7 @@ public class StringOps {
         string = firstWordLowercase(string);
         string = firstLetterUppercase(string);
         string = removeSpace(string);
+        // Very good use of helpers.
         return string;
     }
 
