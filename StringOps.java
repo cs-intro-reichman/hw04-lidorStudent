@@ -26,17 +26,116 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        int length = string.length();
+        char letter = 0;
+        String answer = "";
+        for (int i = 0; i < length; i++) {
+            letter = string.charAt(i);
+            if (letter == 'a' || letter == 'e' || letter == 'i' || 
+                letter == 'o' || letter == 'u') {
+                    answer += (char)(letter - ('a' - 'A'));
+            } else 
+            if (letter == 'A' || letter == 'E' || letter == 'I' || 
+                letter == 'O' || letter == 'U') {
+                    answer += letter;
+            } else 
+            if (letter >= 'A' && letter <= 'Z') {
+                    answer += (char)(letter + ('a' - 'A'));
+            } else {
+                    answer += letter;
+            }
+        }
+        return answer;
+    }
+
+    //Helper functions for camelCase:
+
+    //1.
+    public static String firstWordLowercase (String string) {
+        int index = 0;
+        char letter = string.charAt(index);
+        String answer = "";
+        while (letter == ' ') {
+            index++;
+            letter = string.charAt(index);
+        }
+        while (letter != ' ') {
+            letter = string.charAt(index);
+            if (letter >= 'A' && letter <= 'Z') {
+                    answer += (char)(letter + ('a' - 'A'));
+            } else {
+                    answer += letter;
+            }
+            index++;
+        }
+        answer += string.substring(index);
+        return answer;
+    }
+
+    //2.
+    public static String firstLetterUppercase (String string) {
+        int length = string.length();
+        char letter = string.charAt(0);
+        char lastLetter = 0;
+        String answer = letter + "";
+        for (int i = 1; i < length; i++) {
+            letter = string.charAt(i);
+            lastLetter = string.charAt(i - 1);
+            if (letter >= 'A' && letter <= 'Z' && lastLetter != ' ') {
+                    answer += (char)(letter + ('a' - 'A'));
+            } else 
+            if (letter >= 'A' && letter <= 'Z' && lastLetter == ' ') {
+                    answer += letter;
+            } else 
+            if (letter >= 'a' && letter <= 'z' && lastLetter == ' ') {
+                    answer += (char)(letter - ('a' - 'A'));
+            } else {
+                    answer += letter;
+            }
+        }
+        return answer;
+    }
+
+    //3.
+    public static String removeSpace (String string) {
+        int length = string.length();
+        char letter = 0;
+        String answer = "";
+        for (int i = 0; i < length; i++) {
+            letter = string.charAt(i);
+            if (letter != ' ') {
+                    answer += letter;
+            }
+        }
+        return answer;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        string = firstWordLowercase(string);
+        string = firstLetterUppercase(string);
+        string = removeSpace(string);
+        return string;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int length = string.length();
+        int appears = 0;
+        int index = 0;
+        char letter = 0;
+        for (int i = 0; i < length; i++) {
+            letter = string.charAt(i);
+            if (letter == chr) {
+                appears++;
+            }
+        }
+        int[] answer = new int[appears];
+        for (int i = 0; i < length; i++) {
+            letter = string.charAt(i);
+            if (letter == chr) {
+                answer[index] = i;
+                index++;
+            }
+        }
+        return answer;
     }
 }
